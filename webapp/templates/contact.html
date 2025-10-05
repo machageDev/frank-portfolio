@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - Frankline Machage{% endblock %}
+
+{% block content %}
+<section id="contact" class="container">
+  <h2 class="text-center text-primary mb-4">Get in Touch</h2>
+  <p class="text-center">
+    Email: <a href="mailto:machagefranklyn@gmail.com" class="text-light">machagefranklyn@gmail.com</a>
+  </p>
+
+  <!-- Optional contact form -->
+  <form method="post" class="mt-4 w-50 mx-auto">
+    {% csrf_token %}
+    <div class="mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <div class="mb-3">
+      <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-custom">Send Message</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

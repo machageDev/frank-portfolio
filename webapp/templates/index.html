@@ -1,138 +1,60 @@
-{%load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frankline Machage | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav {
-      background-color: #161b22;
-    }
-    .hero {
-      padding: 100px 0;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #58a6ff;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #8b949e;
-    }
-    .btn-custom {
-      background-color: #58a6ff;
-      color: white;
-      border-radius: 30px;
-      padding: 10px 25px;
-      transition: 0.3s;
-    }
-    .btn-custom:hover {
-      background-color: #1f6feb;
-    }
-    section {
-      padding: 80px 0;
-    }
-    footer {
-      background-color: #161b22;
-      color: #8b949e;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 50px;
-    }
-  </style>
-</head>
-<body>
+{% extends 'base.html' %}
+{%load static%}
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">MachageDev</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+{% block title %}Home - Frankline Machage{% endblock %}
+
+{% block content %}
+<section class="hero" id="home">
+  <div class="container">
+    <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="rounded-circle mb-4" width="160" height="145">
+    <h1>Frankline Machage</h1>
+    <p>Web & Android Developer | Passionate about building beautiful, functional apps</p>
+    <a href="#projects" class="btn btn-custom mt-3">View My Work</a>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2 class="text-center text-primary mb-4">About Me</h2>
+  <p class="text-center">
+    I’m a creative and results-driven developer skilled in building full-stack web and mobile applications.
+    I specialize in Django, Flutter, and modern UI design.
+  </p>
+</section>
+
+<section id="projects" class="bg-dark">
+  <div class="container">
+    <h2 class="text-center text-primary mb-4">Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card bg-secondary text-light">
+          <div class="card-body text-center">
+            <h5>Helawork</h5>
+            <p>Freelance job marketplace built with Django and Flutter.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container">
-      <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="rounded-circle mb-4" width="160" height="145">
-      <h1>Frankline Machage</h1>
-      <p>Web & Android Developer | Passionate about building beautiful, functional apps</p>
-      <a href="#projects" class="btn btn-custom mt-3">View My Work</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="container">
-    <h2 class="text-center text-primary mb-4">About Me</h2>
-    <p class="text-center">
-      I’m a creative and results-driven developer skilled in building full-stack web and mobile applications.
-      I specialize in Django, Flutter, and modern UI design.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="bg-dark">
-    <div class="container">
-      <h2 class="text-center text-primary mb-4">Projects</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card bg-secondary text-light">
-            <div class="card-body text-center">
-              <h5>Helawork</h5>
-              <p>Freelance job marketplace built with Django and Flutter.</p>
-            </div>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-secondary text-light">
+          <div class="card-body text-center">
+            <h5>Eshop</h5>
+            <p>Modern e-commerce web app for clothing and accessories.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card bg-secondary text-light">
-            <div class="card-body text-center">
-              <h5>Eshop</h5>
-              <p>Modern e-commerce web app for clothing and accessories.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card bg-secondary text-light">
-            <div class="card-body text-center">
-              <h5>Diabetic Risk Prediction</h5>
-              <p>Machine Learning system to predict diabetes risk levels.</p>
-            </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-secondary text-light">
+          <div class="card-body text-center">
+            <h5>Diabetic Risk Prediction</h5>
+            <p>Machine Learning system to predict diabetes risk levels.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="container">
-    <h2 class="text-center text-primary mb-4">Get in Touch</h2>
-    <p class="text-center">Email: <a href="mailto:machagefranklyn@gmail.com" class="text-light">machagefranklyn@gmail.com</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Frankline Machage | All Rights Reserved</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<section id="contact" class="container">
+  <h2 class="text-center text-primary mb-4">Get in Touch</h2>
+  <p class="text-center">Email: <a href="mailto:machagefranklyn@gmail.com" class="text-light">machagefranklyn@gmail.com</a></p>
+</section>
+{% endblock %}
